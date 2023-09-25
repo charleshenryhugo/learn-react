@@ -1,4 +1,4 @@
-# Wh using React
+# Why using React
 
 React provides an easy way to build web applications and web user interfaces
 
