@@ -1,0 +1,50 @@
+import React, { useState } from 'react';
+import Expenses from './components/Expenses';
+import NewExpense from './components/NewExpense';
+
+/* A component in React is just a JavaScript function */
+function App() {
+  const [expenses, setExpenses] = useState([
+    {
+      id: 'e1',
+      title: 'Toilet Paper',
+      amount: 94.12,
+      date: new Date(2020, 7, 14),
+    },
+    { id: 'e2', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) },
+    {
+      id: 'e3',
+      title: 'Car Insurance',
+      amount: 294.67,
+      date: new Date(2021, 2, 28),
+    },
+    {
+      id: 'e4',
+      title: 'New Desk (Wooden)',
+      amount: 450,
+      date: new Date(2021, 5, 12),
+    },
+  ])
+
+  const addNewExpenseItem = (expenseItem) => {
+    console.log('onNewExpenseGenerated called from NewExpense component', expenseItem)
+
+    // setExpenses((prev) => {
+    //   return prev.push({
+    //     id: '??',
+    //     ...expenseItem
+    //   })
+    // })
+
+    // console.log(expenses)
+  }
+
+  return (
+    <div>
+      <NewExpense onNewExpenseGenerated={addNewExpenseItem}></NewExpense>
+      <Expenses items={ expenses }></Expenses>
+    </div>
+  );
+}
+
+export default App;
