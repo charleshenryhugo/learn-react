@@ -29,3 +29,15 @@ return React.createElement(
   )
 )
 ```
+
+JSX can also be stored as a variable!
+```JSX
+/* we can store JSX in a variable! */
+let content = <p>No Expenses Found!</p>
+
+return (
+  <div>
+    {content}
+  </div>
+)
+```
